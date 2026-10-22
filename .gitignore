@@ -1,0 +1,23 @@
+# Python : fichiers compilés et caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Environnements virtuels
+.venv/
+venv/
+env/
+
+# Configuration des IDE
+.idea/
+.vscode/
+
+# Fichiers du système
+.DS_Store
+Thumbs.db
+
+# Fichiers temporaires
+*.log
+*.tmp
