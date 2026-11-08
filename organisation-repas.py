@@ -1,24 +1,15 @@
 from tkinter import *
 
-# -----------------------------
-# Fenêtre principale
-# -----------------------------
 fenetre = Tk()
 fenetre.title("Organisation de Repas")
 fenetre.state("zoomed")
 fenetre.configure(bg="#f4f1f1")
 
-# -----------------------------
-# Variables de saisie
-# -----------------------------
 nom_var = StringVar()
 prenom_var = StringVar()
 categorie_var = StringVar()
 categorie_var.set("Entrée")
 
-# -----------------------------
-# Compteurs
-# -----------------------------
 compteur_entree = IntVar()
 compteur_entree.set(0)
 
@@ -34,9 +25,6 @@ compteur_boisson.set(0)
 etat_repas = StringVar()
 etat_repas.set("État du repas : Aucun participant")
 
-# -----------------------------
-# Fonctions
-# -----------------------------
 def mettre_a_jour_etat():
     entree = compteur_entree.get()
     plat = compteur_plat.get()
@@ -86,15 +74,9 @@ def effacer():
     prenom_var.set("")
     categorie_var.set("Entrée")
 
-# -----------------------------
-# Cadre principal
-# -----------------------------
 cadre = Frame(fenetre, bg="#f4f1f1")
 cadre.place(relx=0.5, rely=0.5, anchor="center")
 
-# -----------------------------
-# Titre
-# -----------------------------
 Label(
     cadre,
     text="Organisation de Repas",
@@ -102,9 +84,6 @@ Label(
     bg="#f4f1f1"
 ).grid(row=0, column=0, columnspan=2, pady=20)
 
-# -----------------------------
-# Nom
-# -----------------------------
 Label(
     cadre,
     text="Nom :",
@@ -119,9 +98,6 @@ Entry(
     width=25
 ).grid(row=1, column=1, padx=10, pady=8)
 
-# -----------------------------
-# Prénom
-# -----------------------------
 Label(
     cadre,
     text="Prénom :",
@@ -136,9 +112,6 @@ Entry(
     width=25
 ).grid(row=2, column=1, padx=10, pady=8)
 
-# -----------------------------
-# Catégorie
-# -----------------------------
 Label(
     cadre,
     text="Catégorie :",
@@ -158,9 +131,6 @@ Radiobutton(cadre_radio, text="Dessert", variable=categorie_var, value="Dessert"
 Radiobutton(cadre_radio, text="Boisson", variable=categorie_var, value="Boisson",
             font=("Arial", 13), bg="#f4f1f1").grid(row=3, column=0, sticky="w")
 
-# -----------------------------
-# Boutons
-# -----------------------------
 Button(
     cadre,
     text="Valider",
@@ -181,9 +151,6 @@ Button(
     command=effacer
 ).grid(row=4, column=1, pady=20)
 
-# -----------------------------
-# Répartition
-# -----------------------------
 Label(
     cadre,
     text="Répartition actuelle",
@@ -203,9 +170,6 @@ Label(cadre, textvariable=compteur_dessert, font=("Arial", 14), bg="#f4f1f1", fg
 Label(cadre, text="Boisson :", font=("Arial", 14), bg="#f4f1f1").grid(row=9, column=0, sticky="e", padx=10, pady=5)
 Label(cadre, textvariable=compteur_boisson, font=("Arial", 14), bg="#f4f1f1", fg="blue").grid(row=9, column=1, sticky="w", padx=10, pady=5)
 
-# -----------------------------
-# État global
-# -----------------------------
 label_etat = Label(
     cadre,
     textvariable=etat_repas,
